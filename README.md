@@ -1,4 +1,4 @@
-# AWS Analizer 🚀
+# AWS Analizer 
 
 ![AWS](https://img.shields.io/badge/AWS-Lambda-FF9900?style=for-the-badge&logo=amazon-aws&logoColor=white)
 ![S3](https://img.shields.io/badge/AWS-S3-569A31?style=for-the-badge&logo=amazon-s3&logoColor=white)
@@ -16,15 +16,10 @@ Proyecto de arquitectura cloud que implementa un sistema event-driven para proce
 
 - [Features](#-features)
 - [Demo en Vivo](#-demo-en-vivo)
-- [Arquitectura](#-arquitectura)
-- [Tech Stack](#-tech-stack)
 - [Empezar](#-empezar)
 - [Deployment](#-deployment)
 - [Documentación](#-documentación)
 - [Decisiones de Diseño](#-decisiones-de-diseño)
-- [Roadmap](#-roadmap)
-- [Contribuir](#-contribuir)
-- [Licencia](#-licencia)
 - [Autor](#-autor)
 
 ---
@@ -60,59 +55,42 @@ Proyecto de arquitectura cloud que implementa un sistema event-driven para proce
 ---
 
 ## 🏗️ Arquitectura
+```mermaid
+graph TD
+    User[👤 Usuario<br/>Sube archivo] -->|1. Accede| Web[🌐 Página Web<br/>S3 Static]
+    
+    Web -->|2. Pide permiso| API[🚪 API Gateway<br/>Punto de entrada]
+    
+    API -->|3. Genera URL| Lambda1[⚡ Lambda 1<br/>UrlGenerator]
+    
+    Web -->|4. Sube archivo| Bucket[📦 Storage S3<br/>Guarda archivos]
+    
+    Bucket -->|5. Dispara evento| Lambda2[⚡ Lambda 2<br/>FileProcessor]
+    
+    Lambda2 -->|6. Analiza y guarda| Results[📊 Resultados S3<br/>JSON]
+    
+    Web -->|7. Consulta resultados| API
+    
+    API -->|8. Lee resultados| Lambda3[⚡ Lambda 3<br/>ResultRetriever]
+    
+    Lambda3 -->|9. Obtiene datos| Results
+    
+    Lambda3 -->|10. Retorna| Web
+    
+    Web -->|11. Muestra| User
+    
+    style User fill:#667eea,stroke:#764ba2,stroke-width:3px,color:#fff
+    style Web fill:#FF9900,stroke:#EC7211,stroke-width:2px,color:#232F3E
+    style API fill:#FF4F8B,stroke:#D13212,stroke-width:2px,color:#fff
+    style Lambda1 fill:#1B7F37,stroke:#0F5223,stroke-width:2px,color:#fff
+    style Lambda2 fill:#1B7F37,stroke:#0F5223,stroke-width:2px,color:#fff
+    style Lambda3 fill:#1B7F37,stroke:#0F5223,stroke-width:2px,color:#fff
+    style Bucket fill:#569A31,stroke:#3D6F24,stroke-width:2px,color:#fff
+    style Results fill:#569A31,stroke:#3D6F24,stroke-width:2px,color:#fff
 ```
-┌─────────────┐
-│   Usuario   │
-└──────┬──────┘
-       │ 1. Upload File
-       ▼
-┌─────────────────────┐
-│  S3 Static Website  │ (Frontend: HTML/CSS/JS)
-└──────┬──────────────┘
-       │ 2. Request Presigned URL
-       ▼
-┌─────────────────────┐
-│   API Gateway REST  │ (Entry Point)
-└──────┬──────────────┘
-       │ 3. Invoke Lambda
-       ▼
-┌─────────────────────┐
-│Lambda: UrlGenerator │ → Genera presigned URL
-└──────┬──────────────┘
-       │ 4. Returns signed URL
-       ▼
-┌─────────────────────┐
-│   S3 Bucket         │
-│   /uploads/         │
-└──────┬──────────────┘
-       │ 5. ObjectCreated Event
-       ▼
-┌─────────────────────┐
-│Lambda: FileProcessor│ → Analiza archivo
-└──────┬──────────────┘
-       │ 6. Save results
-       ▼
-┌─────────────────────┐
-│   S3 Bucket         │
-│   /results/         │
-└──────┬──────────────┘
-       │ 7. Polling (GET)
-       ▼
-┌─────────────────────┐
-│Lambda: ResultRetriever│ → Returns JSON
-└──────┬──────────────┘
-       │ 8. Display results
-       ▼
-┌─────────────────────┐
-│   Frontend UI       │
-└─────────────────────┘
-```
-
-**Diagrama visual**: Ver [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md)
-
 ---
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 ### Frontend
 - **HTML5** - Estructura semántica
@@ -284,55 +262,15 @@ El procesamiento asíncrono con S3 Events desacopla el upload del análisis, per
 
 ---
 
-## 🤝 Contribuir
-
-Las contribuciones son bienvenidas. Por favor:
-
-1. Fork el proyecto
-2. Crea una feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit tus cambios (`git commit -m 'Add: AmazingFeature'`)
-4. Push a la branch (`git push origin feature/AmazingFeature`)
-5. Abre un Pull Request
-
-**Coding Standards**:
-- Python: PEP 8
-- JavaScript: ESLint (Airbnb style)
-- Commits: Conventional Commits
-
----
-
-## 📄 Licencia
-
-Este proyecto está bajo la Licencia MIT - ver [`LICENSE`](LICENSE) para detalles.
-
----
-
 ## 👤 Autor
 
 **Tu Nombre**
 
-- GitHub: [@tu-usuario](https://github.com/tu-usuario)
-- LinkedIn: [tu-perfil](https://linkedin.com/in/tu-perfil)
-- Email: tu-email@example.com
-- Portfolio: [tu-portfolio.com](https://tu-portfolio.com)
+- GitHub: [@tu-usuario](https://github.com/AndresRJ18)
+- LinkedIn: [tu-perfil](https://www.linkedin.com/in/andres-rodas-802309272/)
+- Email: andrescloud18sj@gmail.com
+- Portfolio: [tu-portfolio.com](https://andresrodas.vercel.app/)
 
----
-
-## 🙏 Agradecimientos
-
-- AWS Free Tier por el hosting
-- Shields.io por los badges
-- Comunidad de AWS por la documentación
-
----
-
-## 📊 Métricas del Proyecto
-
-- **Líneas de código**: ~1,200 (Python + JS)
-- **Tiempo de desarrollo**: 6-8 horas
-- **Costo mensual**: ~$5 (después de free tier)
-- **Latencia promedio**: <2s (upload a resultados)
-- **Escalabilidad**: 1000+ requests/seg
 
 ---
 
