@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AWS Analizer - Plataforma de análisis inteligente de documentos académicos en la nube">
+    <title>AWS Analizer | Document Intelligence Platform</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-wrapper">
+        <!-- Navigation Bar -->
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-brand">
+                    <svg class="brand-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" stroke-width="2"/>
+                    </svg>
+                    <div class="brand-text">
+                        <span class="brand-name">AWS Analizer</span>
+                        <span class="brand-subtitle">Document Intelligence</span>
+                    </div>
+                </div>
+                
+                <div class="nav-actions">
+                    <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">
+                        <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <circle cx="12" cy="12" r="5" stroke-width="2"/>
+                            <path d="M12 1v2m0 18v2M4.22 4.22l1.42 1.42m12.72 12.72l1.42 1.42M1 12h2m18 0h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" stroke-width="2"/>
+                        </svg>
+                        <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" stroke-width="2"/>
+                        </svg>
+                    </button>
+                    <a href="https://docs.aws.amazon.com" target="_blank" class="nav-link">
+                        Documentación
+                    </a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Container -->
+        <div class="container">
+            <!-- Hero Section -->
+            <header class="hero">
+                <div class="hero-content">
+                    <h1 class="hero-title">Análisis Inteligente de Documentos</h1>
+                    <p class="hero-description">
+                        Plataforma académica para procesamiento y análisis de archivos mediante 
+                        infraestructura AWS. Extrae, analiza y resume contenido de forma automatizada.
+                    </p>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <span class="stat-value">10 MB</span>
+                            <span class="stat-label">Tamaño máximo</span>
+                        </div>
+                        <div class="stat-divider"></div>
+                        <div class="stat-item">
+                            <span class="stat-value">4 Formatos</span>
+                            <span class="stat-label">Tipos soportados</span>
+                        </div>
+                        <div class="stat-divider"></div>
+                        <div class="stat-item">
+                            <span class="stat-value">AWS</span>
+                            <span class="stat-label">Infraestructura</span>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Main Content Area -->
+            <main class="main-content">
+                <!-- Upload Section -->
+                <section id="uploadSection" class="content-section">
+                    <div id="uploadZone" class="upload-container">
+                        <div class="upload-visual">
+                            <svg class="upload-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <div class="upload-content">
+                            <h2 class="upload-title">Seleccionar Documento</h2>
+                            <p class="upload-description">
+                                Arrastra tu archivo aquí o haz clic para explorar
+                            </p>
+                            <div class="upload-formats">
+                                <span class="format-badge">PDF</span>
+                                <span class="format-badge">TXT</span>
+                                <span class="format-badge">PNG</span>
+                                <span class="format-badge">JPG</span>
+                            </div>
+                            <p class="upload-limit">Tamaño máximo: 10 MB</p>
+                        </div>
+                        <input type="file" id="fileInput" accept=".pdf,.txt,.png,.jpg,.jpeg" hidden>
+                    </div>
+                </section>
+
+                <!-- Processing Section -->
+                <section id="progressSection" class="content-section hidden">
+                    <div class="processing-container">
+                        <div class="processing-header">
+                            <div class="processing-icon-wrapper">
+                                <svg class="processing-icon rotating" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                            <div class="processing-text">
+                                <h3 id="statusTitle" class="processing-title">Procesando documento</h3>
+                                <p id="statusMessage" class="processing-message">Iniciando análisis...</p>
+                            </div>
+                        </div>
+                        
+                        <div class="progress-wrapper">
+                            <div class="progress-info">
+                                <span class="progress-label">Progreso</span>
+                                <span id="statusPercentage" class="progress-percentage">0%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div id="progressFill" class="progress-fill">
+                                    <div class="progress-shimmer"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="processing-steps">
+                            <div class="step-item" id="step1">
+                                <div class="step-indicator"></div>
+                                <span class="step-text">Autorización</span>
+                            </div>
+                            <div class="step-item" id="step2">
+                                <div class="step-indicator"></div>
+                                <span class="step-text">Transferencia</span>
+                            </div>
+                            <div class="step-item" id="step3">
+                                <div class="step-indicator"></div>
+                                <span class="step-text">Análisis</span>
+                            </div>
+                            <div class="step-item" id="step4">
+                                <div class="step-indicator"></div>
+                                <span class="step-text">Finalización</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Results Section -->
+                <section id="resultsSection" class="content-section hidden">
+                    <div class="results-container">
+                        <div class="results-header">
+                            <div class="results-header-content">
+                                <h2 class="results-title">Resultados del Análisis</h2>
+                                <p class="results-subtitle">Documento procesado exitosamente</p>
+                            </div>
+                            <button id="newAnalysisBtn" class="btn btn-secondary">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                Nuevo Análisis
+                            </button>
+                        </div>
+
+                        <div class="results-grid">
+                            <!-- Document Information Card -->
+                            <div class="result-card card-primary">
+                                <div class="card-header">
+                                    <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                        <path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" stroke-width="2"/>
+                                    </svg>
+                                    <h3 class="card-title">Información del Documento</h3>
+                                </div>
+                                <div class="card-body">
+                                    <dl class="info-grid">
+                                        <div class="info-row">
+                                            <dt class="info-label">Nombre del archivo</dt>
+                                            <dd id="fileName" class="info-value">-</dd>
+                                        </div>
+                                        <div class="info-row">
+                                            <dt class="info-label">Tamaño</dt>
+                                            <dd id="fileSize" class="info-value">-</dd>
+                                        </div>
+                                        <div class="info-row">
+                                            <dt class="info-label">Tipo MIME</dt>
+                                            <dd id="fileType" class="info-value">-</dd>
+                                        </div>
+                                        <div class="info-row">
+                                            <dt class="info-label">Fecha de procesamiento</dt>
+                                            <dd id="processedTime" class="info-value">-</dd>
+                                        </div>
+                                    </dl>
+                                </div>
+                            </div>
+
+                            <!-- Summary Card -->
+                            <div class="result-card card-highlight">
+                                <div class="card-header">
+                                    <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                        <path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" stroke-width="2"/>
+                                    </svg>
+                                    <h3 class="card-title">Resumen Automático</h3>
+                                </div>
+                                <div class="card-body">
+                                    <p id="fileSummary" class="summary-content">-</p>
+                                </div>
+                            </div>
+
+                            <!-- Metadata Card -->
+                            <div class="result-card">
+                                <div class="card-header">
+                                    <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                        <path d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    <h3 class="card-title">Metadata Extraída</h3>
+                                </div>
+                                <div class="card-body">
+                                    <div id="metadataContainer" class="metadata-display">
+                                        <pre class="metadata-content">-</pre>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Error Section -->
+                <section id="errorSection" class="content-section hidden">
+                    <div class="error-container">
+                        <div class="error-icon-wrapper">
+                            <svg class="error-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <h2 class="error-title">Error en el Procesamiento</h2>
+                        <p id="errorMessage" class="error-message">Ha ocurrido un error durante el análisis del documento</p>
+                        <div class="error-actions">
+                            <button id="retryBtn" class="btn btn-primary">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                Reintentar
+                            </button>
+                            <button id="cancelErrorBtn" class="btn btn-secondary">
+                                Cancelar
+                            </button>
+                        </div>
+                    </div>
+                </section>
+            </main>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-container">
+                <div class="footer-content">
+                    <p class="footer-text">
+                        Desarrollado con <strong>AWS Lambda</strong>, <strong>S3</strong> y <strong>API Gateway</strong>
+                    </p>
+                    <div class="footer-links">
+                        <a href="https://aws.amazon.com/lambda/" target="_blank" rel="noopener" class="footer-link">
+                            AWS Lambda
+                        </a>
+                        <span class="footer-separator">·</span>
+                        <a href="https://aws.amazon.com/s3/" target="_blank" rel="noopener" class="footer-link">
+                            Amazon S3
+                        </a>
+                        <span class="footer-separator">·</span>
+                        <a href="https://github.com/AndresRJ18" target="_blank" rel="noopener" class="footer-link">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                            </svg>
+                            GitHub
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="config.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

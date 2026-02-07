@@ -1,0 +1,110 @@
+# ==========================================
+# AWS Credentials & Secrets
+# ==========================================
+*.pem
+*.key
+*.credentials
+.aws/
+aws-credentials.json
+credentials.json
+
+# Environment Variables
+.env
+.env.local
+.env.production
+config.local.js
+secrets.json
+
+# ==========================================
+# Python
+# ==========================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+venv/
+ENV/
+env/
+
+# ==========================================
+# Node.js (si agregas en el futuro)
+# ==========================================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+yarn.lock
+
+# ==========================================
+# IDEs
+# ==========================================
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# ==========================================
+# Logs
+# ==========================================
+*.log
+logs/
+*.log.*
+
+# ==========================================
+# Temporary Files
+# ==========================================
+*.tmp
+*.temp
+*.bak
+*.cache
+
+# ==========================================
+# Project Specific - DO NOT COMMIT
+# ==========================================
+# Real API Gateway URLs (use config.example.js instead)
+config.real.js
+
+# Real S3 bucket names
+buckets.txt
+
+# Test uploads
+test-files/
+uploads/
+results/
+
+# Deployment artifacts
+*.zip
+deployment/
+lambda-package/
+
+# ==========================================
+# OS Generated
+# ==========================================
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Desktop.ini

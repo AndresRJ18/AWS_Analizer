@@ -1,0 +1,32 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "GeneratePresignedUrls",
+            "Effect": "Allow",
+            "Action": [
+                "s3:PutObject",
+                "s3:PutObjectAcl"
+            ],
+            "Resource": "arn:aws:s3:::YOUR_BUCKET_NAME/uploads/*",
+            "Condition": {
+                "StringEquals": {
+                    "s3:x-amz-server-side-encryption": "AES256"
+                }
+            }
+        },
+        {
+            "Sid": "ListBucketForValidation",
+            "Effect": "Allow",
+            "Action": [
+                "s3:ListBucket"
+            ],
+            "Resource": "arn:aws:s3:::YOUR_BUCKET_NAME",
+            "Condition": {
+                "StringLike": {
+                    "s3:prefix": "uploads/*"
+                }
+            }
+        }
+    ]
+}

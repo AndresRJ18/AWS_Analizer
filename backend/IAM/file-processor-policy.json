@@ -1,0 +1,37 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "ReadUploadedFiles",
+            "Effect": "Allow",
+            "Action": [
+                "s3:GetObject",
+                "s3:GetObjectMetadata",
+                "s3:GetObjectVersion"
+            ],
+            "Resource": "arn:aws:s3:::YOUR_BUCKET_NAME/uploads/*"
+        },
+        {
+            "Sid": "WriteProcessedResults",
+            "Effect": "Allow",
+            "Action": [
+                "s3:PutObject",
+                "s3:PutObjectAcl"
+            ],
+            "Resource": "arn:aws:s3:::YOUR_BUCKET_NAME/results/*",
+            "Condition": {
+                "StringEquals": {
+                    "s3:x-amz-server-side-encryption": "AES256"
+                }
+            }
+        },
+        {
+            "Sid": "ListBucket",
+            "Effect": "Allow",
+            "Action": [
+                "s3:ListBucket"
+            ],
+            "Resource": "arn:aws:s3:::YOUR_BUCKET_NAME"
+        }
+    ]
+}
