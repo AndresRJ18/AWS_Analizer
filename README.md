@@ -21,7 +21,6 @@ Proyecto de arquitectura cloud que implementa un sistema event-driven para proce
 - [Empezar](#-empezar)
 - [Deployment](#-deployment)
 - [Documentación](#-documentación)
-- [Screenshots](#-screenshots)
 - [Decisiones de Diseño](#-decisiones-de-diseño)
 - [Roadmap](#-roadmap)
 - [Contribuir](#-contribuir)
@@ -222,24 +221,6 @@ Consulta la guía completa: [`docs/DEPLOYMENT.md`](docs/DEPLOYMENT.md)
 | [ARCHITECTURE.md](docs/ARCHITECTURE.md) | Decisiones arquitectónicas y justificaciones técnicas |
 | [DEPLOYMENT.md](docs/DEPLOYMENT.md) | Guía paso a paso para desplegar el proyecto |
 | [API.md](docs/API.md) | Documentación de endpoints con ejemplos |
-
----
-
-## 📸 Screenshots
-
-### 1. Upload Interface
-![Upload Interface](screenshots/upload-interface.png)
-> Interfaz drag & drop con feedback visual
-
-### 2. Processing State
-![Processing](screenshots/processing-state.png)
-> Estados visuales durante el procesamiento
-
-### 3. Results Display
-![Results](screenshots/results-display.png)
-> Visualización de metadata y resúmenes
-
-*Screenshots pendientes: ejecuta el proyecto y captura las pantallas*
 
 ---
 
