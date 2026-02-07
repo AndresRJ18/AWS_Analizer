@@ -16,6 +16,8 @@ Proyecto de arquitectura cloud que implementa un sistema event-driven para proce
 
 - [Features](#-features)
 - [Demo en Vivo](#-demo-en-vivo)
+- [Arquitectura](#-arquitectura)
+- [Tech Stack](#tech-stack)
 - [Empezar](#-empezar)
 - [Deployment](#-deployment)
 - [Documentación](#-documentación)
@@ -23,6 +25,7 @@ Proyecto de arquitectura cloud que implementa un sistema event-driven para proce
 - [Autor](#-autor)
 
 ---
+
 
 ## ✨ Features
 
@@ -55,6 +58,8 @@ Proyecto de arquitectura cloud que implementa un sistema event-driven para proce
 ---
 
 ## 🏗️ Arquitectura
+
+### Diagrama Visual 
 ```mermaid
 graph TD
     User[👤 Usuario<br/>Sube archivo] -->|1. Accede| Web[🌐 Página Web<br/>S3 Static]
