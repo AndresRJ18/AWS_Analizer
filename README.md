@@ -277,17 +277,14 @@ Informatics Engineering Student – UPCH
 
 ☁️ Cloud Enthusiast  
 
-- 💼 **LinkedIn:** www.linkedin.com/in/andres-rodas-802309272 
+- ✉︎ **LinkedIn:** [Andres Rodas](www.linkedin.com/in/andres-rodas-802309272)
 - 📧 **Email:** andrescloud18sj@gmail.com
-
+- 💼 **Portfolio:** [Mi Portafolio](https://andresrodas.vercel.app/)
+  
 ## 📄 Licencia
 
 MIT License
 
-- GitHub: [AndresRJ18](https://github.com/AndresRJ18)
-- LinkedIn: [Andres-Rodas](https://www.linkedin.com/in/andres-rodas-802309272/)
-- Email: andrescloud18sj@gmail.com
-- Portfolio: [Mi-Portafolio](https://andresrodas.vercel.app/)
 
 
 ---
