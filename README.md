@@ -266,10 +266,10 @@ El procesamiento asíncrono con S3 Events desacopla el upload del análisis, per
 
 **Tu Nombre**
 
-- GitHub: [@tu-usuario](https://github.com/AndresRJ18)
-- LinkedIn: [tu-perfil](https://www.linkedin.com/in/andres-rodas-802309272/)
+- GitHub: [AndresRJ18](https://github.com/AndresRJ18)
+- LinkedIn: [Andres-Rodas](https://www.linkedin.com/in/andres-rodas-802309272/)
 - Email: andrescloud18sj@gmail.com
-- Portfolio: [tu-portfolio.com](https://andresrodas.vercel.app/)
+- Portfolio: [Mi-Portafolio](https://andresrodas.vercel.app/)
 
 
 ---
