@@ -54,7 +54,7 @@ Proyecto de arquitectura cloud que implementa un sistema event-driven para proce
 
 ## 🌐 Demo en Vivo
 
-> **Frontend**: [http://your-bucket.s3-website-region.amazonaws.com](http://your-bucket.s3-website-region.amazonaws.com)
+> **Frontend**: [http://your-bucket.s3-website-region.amazonaws.com](http://aws-analizer-andresrj18.s3-website-us-east-1.amazonaws.com/)
 
 **Pruébalo**: Arrastra un archivo PDF, TXT, PNG o JPG (máx. 10MB) y observa el análisis en tiempo real.
 
