@@ -16,7 +16,7 @@ Proyecto de arquitectura cloud que implementa un sistema event-driven para proce
 
 - [Features](#-features)
 - [Demo en Vivo](#-demo-en-vivo)
-- [Arquitectura](#-arquitectura)
+- [Arquitectura](#%EF%B8%8F-arquitectura)
 - [Tech Stack](#tech-stack)
 - [Empezar](#-empezar)
 - [Deployment](#-deployment)
