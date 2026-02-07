@@ -55,6 +55,9 @@ Proyecto de arquitectura cloud que implementa un sistema event-driven para proce
 
 **Pruébalo**: Arrastra un archivo PDF, TXT, PNG o JPG (máx. 10MB) y observa el análisis en tiempo real.
 
+### 🎥 Demo Video
+
+[![Study Vault Demo](https://img.youtube.com/vi/4DVU6WhofvY/0.jpg)](https://youtu.be/4DVU6WhofvY)
 ---
 
 ## 🏗️ Arquitectura
@@ -267,9 +270,19 @@ El procesamiento asíncrono con S3 Events desacopla el upload del análisis, per
 
 ---
 
-## 👤 Autor
+##  Autor
 
-**Tu Nombre**
+**Andrés Rodas**  
+Informatics Engineering Student – UPCH  
+
+☁️ Cloud Enthusiast  
+
+- 💼 **LinkedIn:** www.linkedin.com/in/andres-rodas-802309272 
+- 📧 **Email:** andrescloud18sj@gmail.com
+
+## 📄 Licencia
+
+MIT License
 
 - GitHub: [AndresRJ18](https://github.com/AndresRJ18)
 - LinkedIn: [Andres-Rodas](https://www.linkedin.com/in/andres-rodas-802309272/)
