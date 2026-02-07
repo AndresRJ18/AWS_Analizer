@@ -22,7 +22,7 @@ Proyecto de arquitectura cloud que implementa un sistema event-driven para proce
 - [Deployment](#-deployment)
 - [Documentación](#-documentación)
 - [Decisiones de Diseño](#-decisiones-de-diseño)
-- [Autor](#-autor)
+- [Autor](#autor)
 
 ---
 
