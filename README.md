@@ -270,22 +270,21 @@ El procesamiento asíncrono con S3 Events desacopla el upload del análisis, per
 
 ---
 
-##  Autor
+## Autor
 
 **Andrés Rodas**  
-Informatics Engineering Student – UPCH  
+Estudiante de Ingeniería Informática — Universidad Peruana Cayetano Heredia (UPCH)  
+Entusiasta de Cloud Computing e Inteligencia Artificial
 
-☁️ Cloud Enthusiast  
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Andrés_Rodas-0A66C2?style=flat&logo=linkedin)](https://www.linkedin.com/in/andres-rodas-802309272)
+[![GitHub](https://img.shields.io/badge/GitHub-@AndresRJ18-181717?style=flat&logo=github)](https://github.com/AndresRJ18)
+[![Email](https://img.shields.io/badge/Email-andrescloud18sj@gmail.com-D14836?style=flat&logo=gmail)](mailto:andrescloud18sj@gmail.com)
 
-- ✉︎ **LinkedIn:** [Andres Rodas](www.linkedin.com/in/andres-rodas-802309272)
-- 📧 **Email:** andrescloud18sj@gmail.com
-- 💼 **Portfolio:** [Mi Portafolio](https://andresrodas.vercel.app/)
-  
-## 📄 Licencia
+---
 
-MIT License
+## Licencia
 
-
+Este proyecto está licenciado bajo la Licencia MIT. Consulta el archivo [`LICENSE`](LICENSE) para más detalles.
 
 ---
 
